@@ -15,9 +15,9 @@
     PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
 	);
 	
-	//$con = mysqli_connect("localhost", "root", "root", "slotify");
+	// $con = mysqli_connect("localhost", "root", "root", "slotify");
 	$con = new PDO($dsn,$user,$password,$options);
-	//if (mysqli_connect_errno()) {
-	//	echo "Failed to connect:".mysqli_connect_errno();
-	//}
+	// if (mysqli_connect_errno()) {
+		// echo "Failed to connect:".mysqli_connect_errno();
+	// }
 ?>
