@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+  <script type="text/javascript">
+    var audioElem;
+
+    function PlaySound() {
+      audioElem = new Audio();
+      audioElem.src = "assets/music/bensound-acousticbreeze.mp3";
+      audioElem.play();
+    }
+    function StopSound(){
+      audioElem.pause();
+    }
+  </script>
+</head>
+<body>
+  <a href="javascript:void(0);" onclick="PlaySound();">再生</a><br/>
+  <a href="javascript:void(0);" onclick="StopSound();">停止</a><br />
+</body>
+</html>
