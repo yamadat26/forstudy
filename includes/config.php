@@ -4,19 +4,14 @@
 
 	$timezone = date_default_timezone_set("Asia/Tokyo");
 
-	$db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
-  $db['dbname'] = ltrim($db['path'], '/');
-  // $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
-  // $user = $db['user'];
-  // $password = $db['pass'];
-  // $options = array(
-  //   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-  //   PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-  //   PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
-	// );
+	$db = parse_url(getenv("CLEARDB_DATABASE_URL"));
+	$host = $db['host'];
+	$user = $db['user'];
+	$password = $db['pass'];
+	$dbname = $db['dbname'];
+
 	
-	$con = mysqli_connect("$db['host']", "$db['user']", "$db['pass']", "dbname={$db['dbname']");
-	//$con = new PDO($dsn,$user,$password,$options);
+	$con = mysqli_connect($host, $user, $password, $dbname);
 	if (mysqli_connect_errno()) {
 		echo "Failed to connect:".mysqli_connect_errno();
 	}
